@@ -2,3 +2,10 @@
 // Should render the form for submitting a new item
 // Renders a single item, therefore you need to call it multiple
 	// times, rendering a partial for each item in @items.
+
+<h2>What do you need to do?</h2>
+<%= form_for @item do |f| %>
+		<%= f.label :body %>
+		<%= f.text_field :body %>
+		<%= f.submit %>
+<% end %>
