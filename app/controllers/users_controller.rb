@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @item
+    @items
   end
 end

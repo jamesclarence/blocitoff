@@ -12,6 +12,13 @@ require 'faker'
 end
 users = User.all
 
+# Create Items
+100.time do
+  item = Item.new(
+    body: Faker::Lorem.sentence
+    )
+end
+
 admin = User.new(
   name: 'Admin User',
   email: 'admin@example.com',
@@ -23,3 +30,4 @@ admin.save!
 
 puts "Seed finished"
 puts "#{User.count} users created."
+puts "#{Item.count} items created."
