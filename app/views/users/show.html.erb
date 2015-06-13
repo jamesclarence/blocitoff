@@ -1,7 +1,12 @@
 <h1>Welcome, <%= current_user.name %></h1>
 
+<div class="row">
+	<h2>To-Do List</h2>
+	<%= render "items/item" %>
+	<p><%= link_to "Add an item to your list", items_create_path %></p>
+	<p><%= link_to "Change your password", edit_user_registration_path %></p>
+</div>
 
-<%= render "items/item" %>
 
-<%= link_to "Add an item to your list", items_create_path %>
-<%= link_to "Change your password", edit_user_registration_path %>
+
+
