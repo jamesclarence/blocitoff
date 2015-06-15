@@ -1,1 +1,4 @@
 <p>Test "item/item" partial</p>
+<% @item.each do |item| %>
+	<p><%= item.body %></p>
+<% end %>
