@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @item
+    @items = Item.all
+    @item = Item.new(user_id: current_user.id)
   end
 end
