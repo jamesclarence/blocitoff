@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root :to => 'users#show', as: :user_route
+    resources :user, only: [:show]
+    root to: 'user#show'
   end
 
   root to: 'welcome#index'
