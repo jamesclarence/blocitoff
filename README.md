@@ -5,9 +5,9 @@ A project from the Rails Web Development track on [Bloc](http://bloc.io).
 
 ##### *User Stories*
 1. User Sign Up (*complete*)
-2. User Sign in and Out
+2. User Sign in and Out (*complete*)
 3. User Profile
-4. Create To-Do Itmes
+4. Create To-Do Items
 5. Seed Data
 6. Mark To-Do Items as Complete
 7. Display Time Remaining
