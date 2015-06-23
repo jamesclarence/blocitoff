@@ -1,0 +1,10 @@
+<h1>Update Your To-Do List</h1>
+
+<%= render "form" %>
+
+<% if @item.save %>
+	<%= flash[notice: "To-do list updated!"] %>
+	redirect_to user_path
+<% else %>
+	<%= flash[notice: "Item not updated."] %>
+<% end %>

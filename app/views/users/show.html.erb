@@ -1,3 +1,18 @@
-<h1>Welcome, <%= current_user.name %></h1>
+<div class="container">
+	<div style="background-color:#B2D6B2"; class="row">
+	<h1>Welcome, <%= current_user.name %></h1>
+	</div>
+	<div class="row">
+		<h2>To-Do List</h2>
+		<%= render "items/item" %>
+		<%= render "items/form" %>
+	</div>
+	</br>
+	<div class="row">
+		<%= link_to "Change your password", edit_user_registration_path %>
+	</div>	
+</div>
 
-<%= link_to "Change your password", edit_user_registration_path %>
+
+
+
