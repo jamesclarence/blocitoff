@@ -13,8 +13,9 @@ end
 users = User.all
 
 # Create Items
-100.time do
-  item = Item.new(
+100.times do
+  item = Item.create!(
+    user: users.sample,
     body: Faker::Lorem.sentence
     )
 end
