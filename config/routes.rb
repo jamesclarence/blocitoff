@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    resources :user, only: [:show]
+    resources :users, only: [:show]
   end
 
-  root to: 'welcome#index'
-  get 'about' => 'welcome#about'
+  root to: 'shallows#index'
+  get 'about', to: 'shallows#about'
 
 end
