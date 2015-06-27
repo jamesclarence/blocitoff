@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :users, only: [:show]
+    resources :items, only: [:create]
   end
 
   root to: 'shallows#index'

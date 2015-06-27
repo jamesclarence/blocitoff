@@ -8,7 +8,7 @@ A project from the Rails Web Development track on [Bloc](http://bloc.io).
 2. User Sign in and Out (*complete*)
 3. User Profile (*complete*)
 4. Create To-Do Items (*complete*)
-5. Seed Data
+5. Seed Data (*complete*)
 6. Mark To-Do Items as Complete
 7. Display Time Remaining
 8. Delete Expired To-Do Items
