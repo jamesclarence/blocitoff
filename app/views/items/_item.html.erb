@@ -1,6 +1,6 @@
-<div class="col-md-4">
+<div class="col-md-6">
 <% @items.each do |i| %>
-	<li><%= i.body %></li>
+	<div class="row"><%= i.body %><%= link_to "", @item, method: :delete, class: 'glyphicon glyphicon-ok' %></div>
 <% end %>
-<%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
+
 </div>
