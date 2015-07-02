@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Item saved to to-do list"
-      redirect_to user_route_path, :notice => "Your to-do list has been updated."
+      redirect_to current_user
     else
       flash[:error] = "Item not saved to to-do list"
     end
