@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'items/create'
-
   devise_for :users
 
   authenticated :user do

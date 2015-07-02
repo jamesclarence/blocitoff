@@ -5,15 +5,15 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Item saved to to-do list"
-      redirect_to user_route_path, :notice => "Your to-do list has been updated."
+      redirect_to current_user
     else
       flash[:error] = "Item not saved to to-do list"
     end
   end
 
   def destroy
-    @item = Item.find(param[:item_id])
-    authorize @item
+    @item = Item.find(params[:id])
+    # authorize @item
 
     if @item.destroy
       flash[:notice] = "Item deleted from your to-do list"
