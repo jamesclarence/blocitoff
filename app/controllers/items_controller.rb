@@ -13,18 +13,12 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    # authorize @item
 
     if @item.destroy
       flash[:notice] = "Item deleted from your to-do list"
-      redirect_to user_path, :notice => "Your to-do list has been updated."
+      redirect_to current_user
     else
       flash[:error] = "Item was not deleted"
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
     end
   end
 
