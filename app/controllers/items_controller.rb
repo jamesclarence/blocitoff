@@ -11,6 +11,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Item deleted from your to-do list"
+      redirect_to current_user
+    else
+      flash[:error] = "Item was not deleted"
+    end
+  end
+
   private
 
   def item_params
