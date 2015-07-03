@@ -10,25 +10,28 @@ require 'faker'
   user.skip_confirmation!
   user.save!
 end
+
+unless User.find_by_email 'admin@example.com'
+  admin = User.new(
+    name: 'Admin User',
+    email: 'admin@example.com',
+    password: 'helloworld',
+    role: 'admin' 
+  )
+  admin.skip_confirmation!
+  admin.save!
+  puts "admin user created."
+end
 users = User.all
 
+puts "Total Users: #{users.count}"
+
 # Create Items
-100.times do
+100.times do |i|
   item = Item.create!(
     user: users.sample,
-    body: Faker::Lorem.sentence
+    body: "#{i} #{Faker::Lorem.sentence} #{100 - i}"
     )
 end
-
-admin = User.new(
-  name: 'Admin User',
-  email: 'admin@example.com',
-  password: 'helloworld',
-  role: 'admin' 
-)
-admin.skip_confirmation!
-admin.save!
-
-puts "Seed finished"
-puts "#{User.count} users created."
-puts "#{Item.count} items created."
+puts "Total Items: #{Item.count}"
+puts "Seed finished successfully."
