@@ -1,10 +1,24 @@
-<div class="col-md-6">
+<table>
+	<tr>
+		<th colspan="3"><h1>Welcome, <%= current_user.name %></h1></th>
+	</tr>
+	<tr>
+		<th colspan="3"><h3>Your To-Do List</h3></th>
+	</tr>
+	<tr>
+		<th><%= render "items/form" %></th>
+	</tr>
+	<tr>
+		<th>Item</th>
+		<th>Days Left</th>
+		<th>Complete?</th>
+	</tr>
 <% @items.each do |i| %>
-	<div class="row">
-		<%= i.body %>
-		<%= i.days_left %> days left
-		<%= link_to "", item_path(i.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
-	</div>
+	<tr>	
+		<td><%= i.body %></td>
+		<td><%= i.days_left %> days left</td>
+		<td align="center"><%= link_to "", item_path(i.id), method: :delete, class: 'glyphicon glyphicon-ok' %></td>
+	</tr>
 <% end %>
 
-</div>
+</table>
