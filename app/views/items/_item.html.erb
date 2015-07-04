@@ -2,6 +2,7 @@
 <% @items.each do |i| %>
 	<div class="row">
 		<%= i.body %>
+		<%= i.days_left %> days left
 		<%= link_to "", item_path(i.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
 	</div>
 <% end %>
