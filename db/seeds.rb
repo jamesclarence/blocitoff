@@ -30,8 +30,19 @@ puts "Total Users: #{users.count}"
 100.times do |i|
   item = Item.create!(
     user: users.sample,
+    created_at: Faker::Date.between(7.days.ago, Date.today),
     body: "#{i} #{Faker::Lorem.sentence} #{100 - i}"
     )
 end
+
+# Create a member
+member = User.new(
+    name:       'Member User',
+    email:      'member@example.com',
+    password:   'helloworld'
+)
+member.skip_confirmation!
+member.save!
+
 puts "Total Items: #{Item.count}"
 puts "Seed finished successfully."

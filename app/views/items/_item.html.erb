@@ -1,9 +1,21 @@
-<div class="col-md-6">
+<table class="table">
+	<tr>
+		<th colspan="3"><h1><%= current_user.name %>'s To-Do List</h3></th>
+	</tr>
+	<tr>
+		<th><%= render "items/form" %></th>
+	</tr>
+	<tr>
+		<th>Days Left</th>
+		<th>Item</th>
+		<th>Complete?</th>
+	</tr>
 <% @items.each do |i| %>
-	<div class="row">
-		<%= i.body %>
-		<%= link_to "", item_path(i.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
-	</div>
+	<tr>	
+		<td class="col-md-1"><%= i.days_left %> days left</td>
+		<td class="col-md-9"><%= i.body %></td>
+		<td class="col-md-2" align="center"><%= link_to "", item_path(i.id), method: :delete, class: 'fa fa-thumbs-o-up' %></td>
+	</tr>
 <% end %>
 
-</div>
+</table>
