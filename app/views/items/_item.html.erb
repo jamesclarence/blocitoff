@@ -10,7 +10,7 @@
 		<th>Item</th>
 		<th>Complete?</th>
 	</tr>
-<% @items.each do |i| %>
+<% @items.sort{|x,y| x.days_left <=> y.days_left}.each do |i| %>
 	<tr>	
 		<td class="col-md-1"><%= i.days_left %> days left</td>
 		<td class="col-md-9"><%= i.body %></td>
